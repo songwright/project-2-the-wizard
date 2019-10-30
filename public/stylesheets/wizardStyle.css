@@ -1,47 +1,29 @@
 .hero {
     background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
-
-
-
     font-family: "Sunshiney", "Fondamento";
     background-color: rgb(255, 255, 0);
     color: rgb(2, 2, 2);
     font-size: 2.5rem;
-
 }
 
 .header1 {
-
     background-color: rgb(255, 255, 79);
     color: rgb(0, 0, 0);
     size: 20px;
     align-self: center;
     text-align: center;
-
-
-
 }
 
 .theWizard {
-
-
     height: 300px;
     opacity: 100%;
     justify-content: center;
-
-
 }
 
 .wizardLocation {
-
     align-self: center;
-
-
 }
 
 .inputArea {
-
     align-self: center;
-
-
 }
