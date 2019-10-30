@@ -5,9 +5,8 @@ exports.configure = function(env) {
 let configs = {
   "development": {
     "username": "root",
-    // "password": `${process.env.DB_PASSWORD}`,
     "password": `${process.env.DB_PASSWORD}`,
-    "database": "passport_demo",
+    "database": "the_wizard",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
