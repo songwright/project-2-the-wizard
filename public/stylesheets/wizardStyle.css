@@ -8,7 +8,7 @@
 
 .header1 {
     background-color: rgb(255, 255, 79);
-    color: rgb(0, 0, 0);
+    color:purple;
     size: 20px;
     align-self: center;
     text-align: center;
@@ -25,5 +25,6 @@
 }
 
 .inputArea {
+    width: 50%;
     align-self: center;
 }
