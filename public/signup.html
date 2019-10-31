@@ -1,110 +1,185 @@
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ask the Wizard!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Fondamento|Sunshiney&display=swap" rel="stylesheet">
-    <style>
-        .hero {
-            background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
-
-
-
-
-            font-family: "Sunshiney", "Fondamento";
-            background-color: rgb(255, 255, 0);
-            color: rgb(2, 2, 2);
-            font-size: 2.5rem;
-
-        }
-    </style>
+  <title>Passport Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sign Up Form</h2>
+        <form class="signup">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-default">Sign Up</button>
+        </form>
+        <br />
+        <p>Or log in <a href="/login">here</a></p>
+      </div>
+    </div>
+  </div>
 
-    <section class="hero is-fullheight">
-        <nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
 
-            <article
-            style=" border: ivory; opacity: 100%; background-color: rgb(223, 207, 238);background-color: goldenrod; align-self: center; text-align: center;">
-            <div >
-                <p style=" background-color: rgb(255, 255, 79); color: purple; size: 20px;">The Wizard of Westwood
-                </p>
+</body>
 
-            </div>
-
-         
+</html> -->
 
 
-        </nav>
 
-       
-        </p>
-        <figure style="align-self: center;">
-            <div>
-                <p>
-                    <img src="https://media.giphy.com/media/jyzLVsiQ216wg/giphy.gif"
-                        style=" height:300px; opacity:100%; justify-content: center;">
-                </p>
-        
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sign Up</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fondamento|Sunshiney&display=swap" rel="stylesheet">
+  <style>
+      .hero {
+          background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
 
 
-            </div>
 
 
-        </figure>
-        </article>
+          font-family: "Sunshiney", "Fondamento";
+          background-color: rgb(255, 255, 0);
+          color: rgb(2, 2, 2);
+          font-size: 2.5rem;
+
+      }
+  </style>
+          
+</head>
+
+<body>
+  <section class="hero is-fullheight">
+    <nav>
+
+        <article
+        style=" border: ivory; opacity: 100%; background-color: rgb(223, 207, 238);background-color: goldenrod; align-self: center; text-align: center;">
+        <div >
+            <p style=" background-color: rgb(255, 255, 79); color: purple; size: 20px;">The Wizard
+            </p>
+
         </div>
-       
-           
 
-        </article>
-        <section style="align-self: center;">
-            <div class="container">
-                <div class="row">
-                  <div class="col-md-6 col-md-offset-3">
-                    <center>
-                        <h1 style="color: yellow">Sign Up Here</h1>
-                    </center>
-                    <form class="signup">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1" style="color: yellow" >Email Address:</label>
-                        <!-- <input type="email" class="form-control" id="email-input" placeholder="Email"> -->
-                        <input class="input" type="text" placeholder="Enter your email">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1" style="color: yellow" >Password:</label>
-                        <!-- <input type="password" class="form-control" id="password-input" placeholder="Password"> -->
-                        <input class="input" type="text" placeholder="Choose a password">
-                      </div>
-                      <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span> <span class="msg"></span>
-                      </div>
-                      <!-- <button type="submit" class="btn btn-default">Sign Up</button> -->
-                      <center>
-                      <button class="button is-rounded">Create Account</button>
-                      </center>   
-                    </form>
-                    <br />
-                    <center>
-                    <p style="color: yellow">If you already have an account, log in <a href="login.html">here</a></p>
-                    </center>
-                  </div>
-                </div>
-              </div>
-        </section>
+     
+
+
+    </nav>
+
+   
+    </p>
+    <figure style="align-self: center;">
+        <div>
+            <p>
+                <img src="https://media.giphy.com/media/jyzLVsiQ216wg/giphy.gif"
+                    style=" height:300px; opacity:100%; justify-content: center;">
+            </p>
+    
+
 
         </div>
 
 
+    </figure>
+    </article>
+    </div>
+   
+       
 
+    </article>
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <!-- <h3>Login Form</h3>
+        <form class="login"> -->
+          <!-- <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div> -->
+          <!-- <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email address</label>
+            </div>
+          </div> -->
+          <!-- <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div> -->
 
-    </section>
+        <center>
+          <h1 style="color: yellow">Create An Account</h1>
+        </center>
+        <form class="signup">
+          <div class="form-group">
+            <label for="email" style="color: yellow" >Email Address:</label>
+            <!-- <input type="email" class="form-control" id="email-input" placeholder="Email"> -->
+            <input class="input" type="text" id="email-input" placeholder="Enter your email">
+          </div>
+
+          <!-- <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div> -->
+          <div class="form-group">
+            <label for="password" style="color: yellow" >Password:</label>
+            <!-- <input type="password" class="form-control" id="password-input" placeholder="Password"> -->
+            <input class="input" type="password" id="password-input" placeholder="Choose a password">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+
+          <!-- <button type="submit" class="btn btn-default">Login</button> -->
+          <!-- <a class="waves-effect waves-light btn">button</a> -->
+          <center>
+            <button type="submit" class="button is-rounded is-warning">Sign Up</button>
+          </center>  
+
+        </form>
+        <br />
+          <center>
+            <p style="color: yellow">Or log in <a href="login.html">here</a></p>
+          </center>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
 
