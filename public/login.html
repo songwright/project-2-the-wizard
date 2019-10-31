@@ -5,81 +5,54 @@
   <title>Log In</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Fondamento|Sunshiney&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheets/wizardStyle.css">
-  <style>
-      .hero {
-          background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
-
-          font-family: "Sunshiney", "Fondamento";
-          background-color: rgb(255, 255, 0);
-          color: rgb(2, 2, 2);
-          font-size: 2.5rem;
-      }
-  </style>
-          
 </head>
 
 <body>
   <section class="hero is-fullheight">
     <nav>
-        <article
-        style=" border: ivory; opacity: 100%; background-color: rgb(223, 207, 238);background-color: goldenrod; align-self: center; text-align: center;">
-        <div >
-            <p style=" background-color: rgb(255, 255, 79); color: purple; size: 20px;">The Wizard</p>
-        </div>
+      <div class="header1">The Wizard</div>
     </nav>
-   
-    </p>
     <figure style="align-self: center;">
-        <div>
-            <p>
-                <img src="https://media.giphy.com/media/jyzLVsiQ216wg/giphy.gif"
-                    style=" height:300px; opacity:100%; justify-content: center;">
-            </p>
-        </div>
+          <img src="https://media.giphy.com/media/jyzLVsiQ216wg/giphy.gif"
+            style=" height:300px; opacity:100%; justify-content: center;">
     </figure>
-    </article>
-    </div>
-    </article>
-    
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class = "toptext">Log Into Your Account</h1>
-      
-        <form class="login container">
-          <div class="form-group">
-            <label for="email" style="color: yellow" >Email Address:</label>
-            <input class="input" type="text" id="email-input" placeholder="Enter your email">
-          </div>
 
-          <div class="form-group">
-            <label for="password" style="color: yellow" >Password:</label>
-            <input class="input" type="password" id="password-input" placeholder="Choose a password">
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h1 class="toptext">Log Into Your Account</h1>
 
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
+          <form class="login has-text-centered">
+            <div class="form-group">
+              <label for="email" style="color: yellow">Email Address:</label>
+              <input class="input" type="text" id="email-input" placeholder="Enter your email">
+            </div>
 
-          <center>
-            <button class="button is-rounded is-warning">Log In</button>
-          </center>
-        </form>
-        <br />
+            <div class="form-group">
+              <label for="password" style="color: yellow">Password:</label>
+              <input class="input" type="password" id="password-input" placeholder="Choose a password">
+            </div>
+
+            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span> <span class="msg"></span>
+            </div>
+
+              <button class="button is-rounded is-warning">Log In</button>
+          </form>
+          <br />
           <p class="bottomtext">Or sign up <a href="signup.html">here</a></p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 
 </body>
-
 </html>
