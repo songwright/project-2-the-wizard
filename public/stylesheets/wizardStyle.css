@@ -28,3 +28,18 @@
     width: 50%;
     align-self: center;
 }
+
+.bottomtext {
+    text-align: center;
+    color: yellow;
+}
+
+.toptext {
+    text-align: center;
+    color: yellow;
+}
+
+.button {
+    align-self: center;
+    text-align: center;
+}
