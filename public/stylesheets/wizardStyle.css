@@ -27,3 +27,7 @@
 .inputArea {
     align-self: center;
 }
+
+#note-textarea {
+    width: 960px;
+}
