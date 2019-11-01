@@ -8,6 +8,9 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.js').configure(env);
 var db        = {};
 
+const CLASSMETHODS = 'classMethods';
+const ASSOCIATE = 'associate';
+
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
@@ -25,8 +28,10 @@ fs
   });
 
 Object.keys(db).forEach(function(modelName) {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
+  if (CLASSMETHODS in db[modelName].options) {
+    if (ASSOCIATE in db[modelName].options[CLASSMETHODS]) {
+      db[modelName].options.classMethods.associate(db);
+    }
   }
 });
 

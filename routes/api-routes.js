@@ -3,16 +3,10 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
   });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
@@ -33,7 +27,7 @@ module.exports = function(app) {
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
+  app.get("/api/user_data", async function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
@@ -46,4 +40,54 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Route for sending data from user request, user id, and wizard answer to database
+  app.post("/api/queries",function(req, res) {
+    db.Request.create({
+      question: req.body.question,
+      answer: req.body.answer,
+      user_id: req.body.id
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.get("/api/queries",function(req, res) {
+    console.log(req.query.user_id);
+    db.Request.findAll({
+      where: {
+        user_id: req.user.id
+      }
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.get("/api/queries/:id",function(req, res) {
+    db.Request.findOne({
+      where: {
+        user_id: req.user.id
+      }
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.delete("/api/queries",function(req,res) {
+    db.Request.destroy({
+      where: {
+        user_id: req.user.id
+      },truncate: true 
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.delete("/api/queries/:id",function(req,res) {
+    db.Request.destroy({where: {id: req.params.id} }).then(function(data) {
+      res.json(data);
+    })
+  });
+
+
 };
