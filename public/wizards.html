@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,4 +63,70 @@
 <script type="text/javascript" src="js/wizards.js"></script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ask The Wizard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<a class="navbar-brand" href="/logout">
+	        		Logout
+	     		</a>
+	    	</div>
+	  	</div>
+	</nav>
+	<div class="row">
+      	<div class="container-fluid col-md-3">
+        	<div class="jumbotron" style="padding: 35px 15px 15px 10px;">
+          		<h4>Question History</h4>
+          		<div class="card" style="width: 100%">
+            		<ul class="list-group list-group-flush" id="lists"></ul>
+          		</div>
+        	</div>
+      	</div>
+      	<div class="container-fluid col-md-9" style="padding-top: 35px; padding-right: 25px;">
+        	<div class="container" style="text-align: center;">
+        		<h2 >Hello <span class="member-name"></span>, I am the all knowing Wizard!</h2>
+        		<h3>Ask me any technical question and I shall use my vast knowledge to answer it!</h3>
+        	</div>
+  		<div class="container">
+  			<form class="wizard">
+  				<div class="form-group">
+  					<div class="form-group" style="text-align: center;">
+			    		<label for="question">What is your question?</label>
+			    		<input class="form-control" id="question"></input>
+					</div>
+  				</div>
+  				<p style="text-align: center;">
+  					<button type="submit" class="btn btn-primary">Submit</button>
+  				</p>
+  			</form>
+  			<p style="text-align: center;">
+  				<button class="btn btn-danger" id="deleteAll">Delete History</button>
+  			</p>
+  		</div>
+  		<div class="container">
+  			<h4 id= "answer" style="text-align: center;"></h4>
+  		</div>
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/wizards.js"></script>
+
+</body>
+>>>>>>> 75eb0fa6066d5d224efb7082b5e767d4d56894ca
 </html>
