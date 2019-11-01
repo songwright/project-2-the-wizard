@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .hero {
     background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
     font-family: "Sunshiney", "Fondamento";
@@ -43,7 +42,6 @@
 .button {
     align-self: center;
     text-align: center;
-=======
 .hero {
     background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
     font-family: "Sunshiney", "Fondamento";
@@ -88,5 +86,4 @@
 .button {
     align-self: center;
     text-align: center;
->>>>>>> e19ba753456bb0ec4219a8bc9e5a3c9ea2dbc035
 }

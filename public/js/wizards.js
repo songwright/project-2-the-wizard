@@ -5,7 +5,7 @@ let api_url = "https://api.wolframalpha.com/v2/query";
 let key = "TJ4K3V-R45R9RUY6V";
 let counter= 0;
 let savedId = [];
-
+let login_id;
 $(document).ready(function() {
   	$.get("/api/user_data").then(function(data) {
     	$(".member-name").text(data.email);
@@ -19,6 +19,7 @@ function getHistory() {
   		method: "GET",
   		url: "/api/queries"
   	}).then(data => {
+  		console.log(data.length);
 		data.forEach(function(item,index) {
 	  		saved.push({question:item.question,answer:item.answer});
 	  		save(item.question,item.id);
@@ -30,16 +31,19 @@ wizardForm.on("submit", function(event) {
 	let input = question.val().trim();
 	event.preventDefault();
 	$.ajax({
-    	url: api_url + "?appid=" + key + " &input=" + input +"&output=json",
+    	url: api_url + "?appid=" + key + "&input=" + input +"&output=json",
     	contentType: "text/plain",
     	dataType: 'jsonp',
     	success: function(result){
+    		console.log(result.queryresult.pods[0].subpods[0].plaintext);
+    		console.log(result.queryresult.pods[1].subpods[0].plaintext);
     		$.get("/api/user_data").then(function(data) {
 				login_id = data.id;
+				console.log(login_id);
 			});
     		$('#answer').empty();
     		let res = result.queryresult.pods[0].subpods[0].plaintext;
-    		if (res.indexOf("|") > 0) {
+    		if (res.indexOf("|") > 0 || res.indexOf("English word") > 0) {
     			res = result.queryresult.pods[1].subpods[0].plaintext;
     		}
     		saved.push({question:input,answer:res})
@@ -62,6 +66,7 @@ function upload(question,answer,id){
 }
 
 function save(question,questionId){
+	console.log("running");
 	let length = 20;
 	let listItem = $("<li>").attr("class","list-group-item bg-light");
 	if (question.length > length) {
