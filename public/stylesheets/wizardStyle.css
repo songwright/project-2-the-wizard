@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .hero {
     background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
     font-family: "Sunshiney", "Fondamento";
@@ -42,4 +43,50 @@
 .button {
     align-self: center;
     text-align: center;
+=======
+.hero {
+    background: url(https://media.giphy.com/media/cjojgtiigyloyCg3r9/giphy.gif) center / cover;
+    font-family: "Sunshiney", "Fondamento";
+    background-color: rgb(255, 255, 0);
+    color: rgb(2, 2, 2);
+    font-size: 2.5rem;
+}
+
+.header1 {
+    background-color: rgb(255, 255, 79);
+    color:purple;
+    size: 20px;
+    align-self: center;
+    text-align: center;
+}
+
+.theWizard {
+    height: 300px;
+    opacity: 100%;
+    justify-content: center;
+}
+
+.wizardLocation {
+    align-self: center;
+}
+
+.inputArea {
+    width: 50%;
+    align-self: center;
+}
+
+.bottomtext {
+    text-align: center;
+    color: yellow;
+}
+
+.toptext {
+    text-align: center;
+    color: yellow;
+}
+
+.button {
+    align-self: center;
+    text-align: center;
+>>>>>>> e19ba753456bb0ec4219a8bc9e5a3c9ea2dbc035
 }
