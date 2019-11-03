@@ -5,16 +5,20 @@
   <title>Ask The Wizard</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
+  <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Fondamento|Sunshiney&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./stylesheets/wizardStyle.css">  
 </head>
 
 <body>
-	<nav class="navbar navbar-default">
+	<!-- <nav class="navbar navbar-default">
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
 	      		<a class="navbar-brand" href="/logout">
@@ -22,8 +26,8 @@
 	     		</a>
 	    	</div>
 	  	</div>
-	</nav>
-	<div class="row">
+	</nav> -->
+	<!-- <div class="row">
       	<div class="container-fluid col-md-3">
         	<div class="jumbotron" style="padding: 35px 15px 15px 10px;">
           		<h4>Question History</h4>
@@ -58,6 +62,75 @@
   		</div>
 	</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/wizards.js"></script> -->
+
+<section class="hero is-fullheight">
+		<nav>
+				<!-- <div class="navbar-header">
+						<a class="navbar-brand" href="/logout">
+						  Logout
+					   </a>
+				</div> -->
+			<div class="header1">
+					<a class="navbar-brand" href="/logout">
+						Logout
+					 </a>
+				<img src="https://fontmeme.com/permalink/191101/ae0904b6139a61960ced6fae76dfdec4.png" alt="world-of-warcraft-font" border="0">     
+			</div>
+
+			<!-- <div class="navbar-header">
+					<a class="navbar-brand" href="/logout">
+					  Logout
+				   </a>
+			</div> -->
+		</nav>
+		<figure style="align-self: center;">
+			  <img src="https://media.giphy.com/media/jyzLVsiQ216wg/giphy.gif"
+				style=" height:300px; opacity:100%; justify-content: center;">
+		</figure>
+<div class="row">
+	  <div class="container-fluid col-md-3">
+		<!-- <div class="jumbotron" style="padding: 35px 15px 15px 10px;"> -->
+			  <h4 style="color: yellow">Question History</h4>
+			  <div class="card" style="width: 100%">
+				<ul class="list-group list-group-flush" id="lists"></ul>
+			  </div>
+		<!-- </div> -->
+	  </div>
+	  <div class="container-fluid col-md-9" style="padding-top: 35px; padding-right: 25px;">
+		<div class="container" style="text-align: center;">
+			<h2 style="color: yellow">Hello <span class="member-name"></span>, I am the all knowing Wizard!</h2>
+			<!-- <h3 style="color: yellow">Ask me any technical question and I shall use my vast knowledge to answer it!</h3> -->
+		</div>
+	  <!-- <div class="container">
+		  <form class="wizard">
+			  <div class="form-group">
+				  <div class="form-group" style="text-align: center;"> -->
+					<!-- <label for="question">What is your question?</label>
+					<input class="form-control" id="question"></input> -->
+		<section class="inputArea">
+			<div class="field">
+				<div class="control" style="text-align: center;">
+					<textarea class="textarea is-warning" id="question" placeholder="Ask me any technical question and I shall use my vast knowledge to answer it! "></textarea>
+				</div>
+			  </div>
+		</section>
+		<br>
+			  <p style="text-align: center;">
+				<button class="button is-rounded is-warning">Ask the Wizard!</button>
+			  </p>
+		  </form>
+		  <p style="text-align: center;">
+			  <!-- <button class="btn btn-danger" id="deleteAll">Delete History</button> -->
+			  <button class="button is-rounded is-danger" id="deleteAll">Delete History</button>
+		  </p>
+	  </div>
+	  <div class="container">
+		  <h4 id= "answer" style="text-align: center;"></h4>
+	  </div>
+</div>
+</section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/wizards.js"></script>
 
