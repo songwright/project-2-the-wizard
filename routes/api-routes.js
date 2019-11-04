@@ -46,7 +46,7 @@ module.exports = function(app) {
     db.Request.create({
       question: req.body.question,
       answer: req.body.answer,
-      user_id: req.body.id
+      user_id: req.user.id
     }).then(function(data) {
       res.json(data);
     });
