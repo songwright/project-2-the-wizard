@@ -1,6 +1,7 @@
 let saved = []
 let wizardForm = $("form.wizard");
-let question = $("input#question");
+let question = $("#question");
+let submit = $("#submit");
 let api_url = "https://api.wolframalpha.com/v2/query";
 let key = "TJ4K3V-R45R9RUY6V";
 let counter= 0;
@@ -14,7 +15,9 @@ $(document).ready(function() {
 });
 
 function getHistory() {
+	counter = 0;
 	$("#lists").empty();
+	saved = [];
 	$.ajax({
   		method: "GET",
   		url: "/api/queries"
@@ -27,7 +30,8 @@ function getHistory() {
 	});
 };
 
-wizardForm.on("submit", function(event) { 
+$(document).on("click", '#submit', function(event) {
+	console.log(question); 
 	let input = question.val().trim();
 	event.preventDefault();
 	$.ajax({
@@ -47,7 +51,7 @@ wizardForm.on("submit", function(event) {
     			res = result.queryresult.pods[1].subpods[0].plaintext;
     		}
     		saved.push({question:input,answer:res})
-    		upload(input,res,login_id);
+    		upload(input,res);
     		x = counter + 1;
     		$('#answer').append("The answer is: "+res);
     	}
@@ -58,31 +62,31 @@ function upload(question,answer,id){
 	$.post("/api/queries", {
 		question: question,
 		answer: answer,
-		id: id
 	}).then(function(data) {
 		savedId.push(data);
 		save(data.question,data.id)
+		console.log(data)
+		console.log(saved);
 	});
 }
 
 function save(question,questionId){
 	console.log("running");
-	let length = 20;
-	let listItem = $("<li>").attr("class","list-group-item bg-light");
+	let length = 30;
+	let listItem;
 	if (question.length > length) {
-		let button = $("<button>").attr("class","btn btn-light").attr("id",counter).text(question.substring(0, length));
-		listItem.append(button);
+		listItem = $("<a>").attr("class","list-item has-background-light").attr("id",counter).attr("style","font-size: 20px;").text(question.substring(0, length));
 	} 
 	else {
-		let button = $("<button>").attr("class","btn btn-light").attr("id",counter).text(question);
-		listItem.append(button);
+		listItem = $("<a>").attr("class","list-item has-background-light").attr("id",counter).attr("style","font-size: 20px;").text(question);
 	}
-	let dltButton = $("<button>").attr("id",questionId).attr("class","delete").html(`<i class="fas fa-trash-alt"></i>`);
+	let dltButton = $("<button>").attr("id",questionId).attr("class","delete").attr("style","float: right").html(`<i class="fas fa-trash-alt"></i>`);
 	listItem.append(dltButton);
 	$("#lists").prepend(listItem);
 	counter++;
 };
-$(document).on("click",'#lists .btn-light',function(){
+$(document).on("click",'a',function(){
+	console.log("clicked list item");
     let x = $(this)[0].id;
     $("#answer").empty();
     let savedAnswer = saved[x].answer;
@@ -96,7 +100,10 @@ $(document).on("click",'#lists .btn-light',function(){
 $(document).on("click",'.delete', function(){
 	let id = $(this).attr('id');
 	let bId = $(this)[0].parentNode.firstElementChild.id;
+	console.log(bId);
+	console.log(saved);
 	saved.splice(bId,1);
+	console.log(saved);
 	$.ajax({
   		method: "DELETE",
   		url: "/api/queries/"+id,

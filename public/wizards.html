@@ -89,16 +89,20 @@
 			  <img src="https://media.giphy.com/media/jyzLVsiQ216wg/giphy.gif"
 				style=" height:300px; opacity:100%; justify-content: center;">
 		</figure>
-<div class="row">
-	  <div class="container-fluid col-md-3">
+<div class="columns">
+	<div class="column is-one-quarter">
+	  <div class="container">
 		<!-- <div class="jumbotron" style="padding: 35px 15px 15px 10px;"> -->
 			  <h4 style="color: yellow">Question History</h4>
-			  <div class="card" style="width: 100%">
-				<ul class="list-group list-group-flush" id="lists"></ul>
+			  <div class="box" style="width: 100%">
+				<div class="list is-hoverable has-backgroundlight" id="lists"></ul>
 			  </div>
 		<!-- </div> -->
 	  </div>
-	  <div class="container-fluid col-md-9" style="padding-top: 35px; padding-right: 25px;">
+	</div>
+</div>
+	<!-- <div class="column"> -->
+	  <div class="container" style="padding-top: 35px; padding-right: 25px;">
 		<div class="container" style="text-align: center;">
 			<h2 style="color: yellow">Hello <span class="member-name"></span>, I am the all knowing Wizard!</h2>
 			<!-- <h3 style="color: yellow">Ask me any technical question and I shall use my vast knowledge to answer it!</h3> -->
@@ -111,14 +115,19 @@
 					<input class="form-control" id="question"></input> -->
 		<section class="inputArea">
 			<div class="field">
+			  	<div class="control">
+			    	<textarea class="textarea" placeholder="Ask me any technical question and I shall use my vast knowledge to answer it!" id="question"></textarea>
+			  	</div>
+			</div>
+			<!-- <div class="field">
 				<div class="control" style="text-align: center;">
 					<textarea class="textarea is-warning" id="question" placeholder="Ask me any technical question and I shall use my vast knowledge to answer it! "></textarea>
 				</div>
-			  </div>
+			  </div> -->
 		</section>
 		<br>
 			  <p style="text-align: center;">
-				<button class="button is-rounded is-warning">Ask the Wizard!</button>
+				<button class="button is-rounded is-warning" id="submit">Ask the Wizard!</button>
 			  </p>
 		  </form>
 		  <p style="text-align: center;">
@@ -126,10 +135,13 @@
 			  <button class="button is-rounded is-danger" id="deleteAll">Delete History</button>
 		  </p>
 	  </div>
-	  <div class="container">
-		  <h4 id= "answer" style="text-align: center;"></h4>
-	  </div>
+	</div>
+<!-- </div> -->
+<div class="container has-text-warning">
+	<h4 id= "answer" style="text-align: center;"></h4>
 </div>
+<br>
+<br>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/wizards.js"></script>
