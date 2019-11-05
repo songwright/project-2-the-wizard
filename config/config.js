@@ -2,13 +2,17 @@ exports.configure = function(env) {
   return configs[env];
 }
 
-let configs = {
-  "development": {
-    "username": "root",
-    "password": `${process.env.DB_PASSWORD}`,
-    "database": "project_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  let configs = {
+    "development": {
+      "username": "root",
+      "password": `${process.env.DB_PASSWORD}`,
+      "database": "project_db",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
   }
   //,
   // "test": {
